@@ -100,6 +100,14 @@ Default: `false`
 
 Output compression.
 
+#### configure
+
+Type `Function`  
+Default: `undefined`
+
+Function that will take the `styl` compiler for additional configuration. Useful
+for adding on plugins, etc.
+
 
 ## License
 
