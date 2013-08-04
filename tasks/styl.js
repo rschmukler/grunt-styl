@@ -16,9 +16,7 @@ module.exports = function (grunt) {
 		delete options.vendors;
     delete options.configure;
 
-		//grunt.util.async.forEach(this.files, function (el, next) {
-    this.files.forEach(function(el) {
-      debugger;
+		grunt.util.async.forEach(this.files, function (el, next) {
 			var css = el.src.map(function (filePath) {
 				return grunt.file.read(filePath);
 			}).join(grunt.util.linefeed);
@@ -30,8 +28,7 @@ module.exports = function (grunt) {
 
 			grunt.file.write(el.dest, style.toString());
 
-			//next();
-    });
-		//}, this.async());
+			next();
+		}, this.async());
 	});
 };
