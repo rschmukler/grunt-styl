@@ -22,8 +22,9 @@ module.exports = function (grunt) {
 			}).join(grunt.util.linefeed);
 
 			var style = new Style(css, options);
-      if(configure)
+      if(configure) {
         configure(style);
+      }
 			style.vendors(vendors);
 
 			grunt.file.write(el.dest, style.toString());
